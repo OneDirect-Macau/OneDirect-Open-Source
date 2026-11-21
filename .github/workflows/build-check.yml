@@ -52,10 +52,14 @@ jobs:
     timeout-minutes: 5
     permissions:
       contents: read
-      pull-requests: write
     steps:
-      - name: Approve pull request
+      - name: Approve pull request when token is configured
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.AUTO_APPROVE_TOKEN }}
           PR_URL: ${{ github.event.pull_request.html_url }}
-        run: gh pr review "$PR_URL" --approve --body "All required build, type-check, and test checks passed."
+        run: |
+          if [ -z "$GH_TOKEN" ]; then
+            echo "::notice title=Automatic approval not configured::Add the AUTO_APPROVE_TOKEN repository secret to enable automatic approval."
+            exit 0
+          fi
+          gh pr review "$PR_URL" --approve --body "All required build, type-check, and test checks passed."
