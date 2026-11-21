@@ -22,6 +22,10 @@ const allowedExtensions = new Set([
   ".yaml",
   ".yml",
 ]);
+const approvedCommunityUrls = [
+  "https://whatsapp.com/channel/0029VbE05XjDp2QCXyMP3Y04",
+  "https://t.me/+HCNCdc0Kfzg2ZDc1",
+];
 
 const checks = [
   {
@@ -83,6 +87,12 @@ for (const file of files) {
   const content = await readFile(file, "utf8");
   const scannedContent = content.replace(
     /http:\/\/www\.w3\.org\/(?:2000\/svg|1999\/xlink)/gu,
+    "",
+  ).replaceAll(
+    approvedCommunityUrls[0],
+    "",
+  ).replaceAll(
+    approvedCommunityUrls[1],
     "",
   );
 

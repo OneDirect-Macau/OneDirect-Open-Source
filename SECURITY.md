@@ -12,6 +12,8 @@
 - `.env` 與 `.env.*` 不得提交；只提交空白 `.env.example`。
 - Log 不得記錄 credentials、authorization values、cookies 或完整 upstream payload。
 - Mock data 必須使用虛構名稱、虛構站點代碼與與正式資料無關的座標。
+- `COMMUNITY.md` 的 WhatsApp 與 Telegram links 是唯一 allowlisted 社群 URLs；不得加入其他 operational URLs。
+- Community channels 屬公開空間，不得張貼 credentials 或 unsanitized payload。
 
 ## Incident Response
 

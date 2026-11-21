@@ -13,7 +13,7 @@
     },
     "./styles.css": "./dist/styles.css"
   },
-  "files": ["dist", "README.md", "AGENTS.md"],
+  "files": ["dist", "README.md", "README.en.md", "AGENTS.md"],
   "scripts": {
     "dev": "vite --host localhost",
     "build": "node -e \"require('node:fs').rmSync('dist',{recursive:true,force:true})\" && tsc -p tsconfig.json && vite build",
