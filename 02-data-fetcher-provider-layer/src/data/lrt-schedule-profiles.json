@@ -1,0 +1,17 @@
+{
+  "green": {
+    "lineId": "green",
+    "travelMinutes": 18,
+    "reverseDirections": [1],
+    "weekdayHeadway": [
+      { "startMinute": 390, "endMinute": 510, "minutes": 8 },
+      { "startMinute": 510, "endMinute": 1200, "minutes": 6 },
+      { "startMinute": 1200, "endMinute": 1439, "minutes": 10 }
+    ],
+    "weekendHeadway": [
+      { "startMinute": 390, "endMinute": 570, "minutes": 10 },
+      { "startMinute": 570, "endMinute": 1380, "minutes": 7 },
+      { "startMinute": 1380, "endMinute": 1439, "minutes": 12 }
+    ]
+  }
+}

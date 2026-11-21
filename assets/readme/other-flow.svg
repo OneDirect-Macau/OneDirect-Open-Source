@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="360" viewBox="0 0 1400 360" role="img" aria-label="Other module boundaries">
+  <defs>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#8B654A"/>
+    </marker>
+  </defs>
+  <rect width="1400" height="360" rx="24" fill="#FFFFFF" stroke="#DDD1C7"/>
+  <text x="52" y="70" font-family="Segoe UI, PingFang TC, sans-serif" font-size="16" font-weight="800" fill="#8B654A">AUXILIARY BOUNDARY</text>
+  <g font-family="Segoe UI, PingFang TC, sans-serif" font-size="18" font-weight="700" fill="#17231F">
+    <rect x="52" y="120" width="276" height="130" rx="16" fill="#F3EEE8"/>
+    <text x="74" y="162">Core Packages</text>
+    <text x="74" y="194" font-size="14" font-weight="500" fill="#6A6059">01 · 02 · 03 · 04</text>
+    <rect x="424" y="120" width="276" height="130" rx="16" fill="#F3EEE8"/>
+    <text x="446" y="162">Auxiliary Packages</text>
+    <text x="446" y="194" font-size="14" font-weight="500" fill="#6A6059">geofencing · map UI</text>
+    <rect x="796" y="120" width="276" height="130" rx="16" fill="#F3EEE8"/>
+    <text x="818" y="162">Integration Surface</text>
+    <text x="818" y="194" font-size="14" font-weight="500" fill="#6A6059">demo-hub</text>
+    <rect x="1168" y="120" width="180" height="130" rx="16" fill="#101B22"/>
+    <text x="1190" y="162" fill="#FFFFFF">No reverse</text>
+    <text x="1190" y="194" font-size="14" font-weight="500" fill="#B9C9C3">dependency</text>
+  </g>
+  <path d="M328 185 L424 185" stroke="#8B654A" stroke-width="4" marker-end="url(#a)"/>
+  <path d="M700 185 L796 185" stroke="#8B654A" stroke-width="4" marker-end="url(#a)"/>
+  <path d="M1072 185 L1168 185" stroke="#8B654A" stroke-width="4" marker-end="url(#a)"/>
+</svg>

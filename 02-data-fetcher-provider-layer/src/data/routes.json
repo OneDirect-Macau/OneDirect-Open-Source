@@ -1,0 +1,50 @@
+[
+  {
+    "id": "B12",
+    "label": "B12",
+    "description": "Demo Harbor North - Tech Park",
+    "mode": "bus",
+    "color": "#E4572E",
+    "directions": [
+      {
+        "index": 0,
+        "name": "Outbound",
+        "stops": [
+          { "id": "BUS-01", "code": "D101", "name": "Harbor North", "coordinate": { "lat": 22.1512, "lng": 113.5488 } },
+          { "id": "BUS-02", "code": "D102", "name": "City Museum", "coordinate": { "lat": 22.1534, "lng": 113.5541 } },
+          { "id": "BUS-03", "code": "D103", "name": "Central Square", "coordinate": { "lat": 22.1542, "lng": 113.5602 } },
+          { "id": "BUS-04", "code": "D104", "name": "Tech Park", "coordinate": { "lat": 22.1571, "lng": 113.5665 } }
+        ]
+      },
+      {
+        "index": 1,
+        "name": "Inbound",
+        "stops": [
+          { "id": "BUS-04", "code": "D104", "name": "Tech Park", "coordinate": { "lat": 22.1571, "lng": 113.5665 } },
+          { "id": "BUS-03", "code": "D103", "name": "Central Square", "coordinate": { "lat": 22.1542, "lng": 113.5602 } },
+          { "id": "BUS-02", "code": "D102", "name": "City Museum", "coordinate": { "lat": 22.1534, "lng": 113.5541 } },
+          { "id": "BUS-01", "code": "D101", "name": "Harbor North", "coordinate": { "lat": 22.1512, "lng": 113.5488 } }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "B27",
+    "label": "B27",
+    "description": "Garden District Loop",
+    "mode": "bus",
+    "color": "#2578B8",
+    "directions": [
+      {
+        "index": 0,
+        "name": "Loop",
+        "stops": [
+          { "id": "BUS-05", "code": "D201", "name": "Garden Library", "coordinate": { "lat": 22.1478, "lng": 113.5594 } },
+          { "id": "BUS-06", "code": "D202", "name": "East Market", "coordinate": { "lat": 22.1452, "lng": 113.5638 } },
+          { "id": "BUS-07", "code": "D203", "name": "River Walk", "coordinate": { "lat": 22.1481, "lng": 113.5681 } },
+          { "id": "BUS-08", "code": "D204", "name": "Community Stadium", "coordinate": { "lat": 22.1516, "lng": 113.5653 } }
+        ]
+      }
+    ]
+  }
+]

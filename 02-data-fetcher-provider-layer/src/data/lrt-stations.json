@@ -1,0 +1,7 @@
+[
+  { "id": "LRT-01", "code": "L101", "name": "Harbor South", "coordinate": { "lat": 22.1462, "lng": 113.5518 }, "routeIds": ["green"] },
+  { "id": "LRT-02", "code": "L102", "name": "Convention Center", "coordinate": { "lat": 22.1475, "lng": 113.5555 }, "routeIds": ["green"] },
+  { "id": "LRT-03", "code": "L103", "name": "Central Station", "coordinate": { "lat": 22.1491, "lng": 113.5591 }, "routeIds": ["green"] },
+  { "id": "LRT-04", "code": "L104", "name": "Garden Park", "coordinate": { "lat": 22.1515, "lng": 113.5623 }, "routeIds": ["green"] },
+  { "id": "LRT-05", "code": "L105", "name": "Innovation Hub", "coordinate": { "lat": 22.1546, "lng": 113.5652 }, "routeIds": ["green"] }
+]

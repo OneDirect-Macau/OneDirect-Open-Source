@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="620" viewBox="0 0 1600 620" role="img" aria-label="OneDirect architecture overview">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#5A6B65"/>
+    </marker>
+  </defs>
+  <rect width="1600" height="620" rx="26" fill="#F7F4EC"/>
+  <text x="64" y="76" font-family="Segoe UI, PingFang TC, sans-serif" font-size="44" font-weight="850" fill="#17231F">Architecture Overview</text>
+  <text x="66" y="112" font-family="Segoe UI, PingFang TC, sans-serif" font-size="18" fill="#65736E">Provider-first boundaries with no direct imports between core feature packages.</text>
+  <g font-family="Segoe UI, PingFang TC, sans-serif">
+    <rect x="62" y="186" width="250" height="132" rx="18" fill="#101B22"/>
+    <text x="88" y="226" font-size="15" font-weight="800" fill="#E4572E">HOST INPUT</text>
+    <text x="88" y="262" font-size="24" font-weight="750" fill="#FFFFFF">Backend or Mock</text>
+    <text x="88" y="291" font-size="15" fill="#B9C9C3">Fixtures remain fictional</text>
+
+    <rect x="382" y="166" width="320" height="172" rx="18" fill="#DCE9F2"/>
+    <text x="410" y="206" font-size="15" font-weight="800" fill="#2578B8">02 · PROVIDER LAYER</text>
+    <text x="410" y="245" font-size="26" font-weight="750" fill="#17231F">Data Fetcher</text>
+    <text x="410" y="278" font-size="15" fill="#52645D">DataProvider · TTL Cache · Retry</text>
+    <text x="410" y="303" font-size="15" fill="#52645D">Fallback · MockDataProvider</text>
+
+    <rect x="780" y="84" width="292" height="124" rx="18" fill="#FBE3DA"/>
+    <text x="806" y="122" font-size="14" font-weight="800" fill="#E4572E">01 · BUS ETA ENGINE</text>
+    <text x="806" y="157" font-size="25" font-weight="750" fill="#17231F">Arrival estimates</text>
+    <text x="806" y="184" font-size="14" fill="#6A5B56">State · matching · boundaries</text>
+
+    <rect x="780" y="250" width="292" height="124" rx="18" fill="#F7EBCB"/>
+    <text x="806" y="288" font-size="14" font-weight="800" fill="#9D6A00">03 · SMART SEARCH</text>
+    <text x="806" y="323" font-size="25" font-weight="750" fill="#17231F">Search keyboard</text>
+    <text x="806" y="350" font-size="14" fill="#6A5B56">Ranking · completion · key state</text>
+
+    <rect x="780" y="416" width="292" height="124" rx="18" fill="#DDEEE4"/>
+    <text x="806" y="454" font-size="14" font-weight="800" fill="#2E8B57">04 · TRANSIT NAVIGATION</text>
+    <text x="806" y="489" font-size="25" font-weight="750" fill="#17231F">Journey planning</text>
+    <text x="806" y="516" font-size="14" fill="#52645D">Direct · transfer · geometry</text>
+
+    <rect x="1180" y="218" width="326" height="224" rx="18" fill="#FFFFFF" stroke="#C9D3CF"/>
+    <text x="1210" y="260" font-size="15" font-weight="800" fill="#E4572E">OUTPUT SURFACE</text>
+    <text x="1210" y="300" font-size="27" font-weight="750" fill="#17231F">demo-hub</text>
+    <text x="1210" y="334" font-size="15" fill="#52645D">Functional UI only</text>
+    <text x="1210" y="360" font-size="15" fill="#52645D">Typed results</text>
+    <text x="1210" y="386" font-size="15" fill="#52645D">No external endpoints</text>
+
+    <path d="M312 252 L382 252" stroke="#5A6B65" stroke-width="3" marker-end="url(#arrow)"/>
+    <path d="M702 222 C742 222 736 146 780 146" fill="none" stroke="#5A6B65" stroke-width="3" marker-end="url(#arrow)"/>
+    <path d="M702 252 L780 312" fill="none" stroke="#5A6B65" stroke-width="3" marker-end="url(#arrow)"/>
+    <path d="M702 282 C742 282 738 478 780 478" fill="none" stroke="#5A6B65" stroke-width="3" marker-end="url(#arrow)"/>
+    <path d="M1072 146 C1130 146 1128 272 1180 272" fill="none" stroke="#5A6B65" stroke-width="3" marker-end="url(#arrow)"/>
+    <path d="M1072 312 L1180 312" stroke="#5A6B65" stroke-width="3" marker-end="url(#arrow)"/>
+    <path d="M1072 478 C1132 478 1128 388 1180 388" fill="none" stroke="#5A6B65" stroke-width="3" marker-end="url(#arrow)"/>
+  </g>
+  <rect x="64" y="558" width="308" height="28" rx="14" fill="#E9EFEC"/>
+  <text x="218" y="577" text-anchor="middle" font-family="Segoe UI, PingFang TC, sans-serif" font-size="13" font-weight="750" fill="#52645D">other-modules remains auxiliary only</text>
+</svg>

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="400" viewBox="0 0 1600 400" role="img" aria-label="Data Fetcher and Provider Layer banner">
+  <rect width="1600" height="400" rx="26" fill="#EDF5FA"/>
+  <g transform="translate(1030 62)">
+    <rect x="46" y="0" width="390" height="86" rx="18" fill="#FFFFFF" stroke="#B9D1E0"/>
+    <rect x="24" y="46" width="390" height="86" rx="18" fill="#E3F0F8" stroke="#B9D1E0"/>
+    <rect x="0" y="92" width="390" height="86" rx="18" fill="#2578B8"/>
+    <text x="30" y="145" font-family="Segoe UI, PingFang TC, sans-serif" font-size="22" font-weight="800" fill="#FFFFFF">DataProvider</text>
+    <text x="54" y="94" font-family="Segoe UI, PingFang TC, sans-serif" font-size="18" font-weight="700" fill="#31576F">Cache · Retry · Fallback</text>
+    <text x="76" y="48" font-family="Segoe UI, PingFang TC, sans-serif" font-size="16" font-weight="700" fill="#5E7684">Mock Fixtures</text>
+  </g>
+  <g font-family="Segoe UI, PingFang TC, sans-serif">
+    <rect x="54" y="46" width="88" height="42" rx="21" fill="#2578B8"/>
+    <text x="98" y="73" text-anchor="middle" font-size="17" font-weight="800" fill="#FFFFFF">02</text>
+    <text x="58" y="166" font-size="62" font-weight="850" letter-spacing="-2" fill="#17231F">PROVIDER LAYER</text>
+    <text x="60" y="208" font-size="23" fill="#506A78">One contract for mock data, cache and fault tolerance.</text>
+    <text x="60" y="268" font-size="17" font-weight="750" fill="#2578B8">Deterministic tests</text>
+    <text x="60" y="300" font-size="17" font-weight="750" fill="#2578B8">Defensive copies</text>
+    <text x="60" y="332" font-size="17" font-weight="750" fill="#2578B8">Offline by default</text>
+  </g>
+</svg>

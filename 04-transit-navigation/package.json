@@ -1,0 +1,22 @@
+{
+  "name": "@onedirect/transit-navigation",
+  "version": "0.1.0",
+  "license": "Apache-2.0",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": ["dist", "README.md", "AGENTS.md"],
+  "scripts": {
+    "build": "node -e \"require('node:fs').rmSync('dist',{recursive:true,force:true})\" && tsc -p tsconfig.json",
+    "test": "node -e \"require('node:fs').rmSync('.test-dist',{recursive:true,force:true})\" && tsc -p tsconfig.test.json && node --test --test-isolation=none .test-dist/test/*.test.js"
+  },
+  "dependencies": {
+    "@onedirect/data-fetcher-provider-layer": "0.1.0"
+  }
+}

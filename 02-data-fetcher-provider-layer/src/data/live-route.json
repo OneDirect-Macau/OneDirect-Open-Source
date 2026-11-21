@@ -1,0 +1,31 @@
+{
+  "routeId": "B12",
+  "directionIndex": 0,
+  "observedAt": "2026-11-21T08:00:00.000Z",
+  "stops": [
+    {
+      "index": 0,
+      "code": "D101",
+      "name": "Harbor North",
+      "vehicles": [{ "id": "DEMO-101", "segmentIndex": 0, "speedKmh": 24 }]
+    },
+    {
+      "index": 1,
+      "code": "D102",
+      "name": "City Museum",
+      "vehicles": []
+    },
+    {
+      "index": 2,
+      "code": "D103",
+      "name": "Central Square",
+      "vehicles": [{ "id": "DEMO-204", "segmentIndex": 2, "speedKmh": 18 }]
+    },
+    {
+      "index": 3,
+      "code": "D104",
+      "name": "Tech Park",
+      "vehicles": []
+    }
+  ]
+}

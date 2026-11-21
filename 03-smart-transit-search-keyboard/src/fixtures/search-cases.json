@@ -1,0 +1,18 @@
+[
+  {
+    "id": "AP1",
+    "kind": "route",
+    "title": "AP1 · Airport Express",
+    "subtitle": "Outbound",
+    "aliases": ["Airport Express"],
+    "routeIds": ["AP1"]
+  },
+  {
+    "id": "Harbor North",
+    "kind": "stop",
+    "title": "Harbor North",
+    "subtitle": "Routes B12",
+    "aliases": ["D101", "B12"],
+    "routeIds": ["B12"]
+  }
+]

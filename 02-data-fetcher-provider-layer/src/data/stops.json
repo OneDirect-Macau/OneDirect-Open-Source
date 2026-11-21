@@ -1,0 +1,14 @@
+[
+  { "id": "BUS-01", "code": "D101", "name": "Harbor North", "coordinate": { "lat": 22.1512, "lng": 113.5488 }, "routeIds": ["B12"] },
+  { "id": "BUS-02", "code": "D102", "name": "City Museum", "coordinate": { "lat": 22.1534, "lng": 113.5541 }, "routeIds": ["B12"] },
+  { "id": "BUS-03", "code": "D103", "name": "Central Square", "coordinate": { "lat": 22.1542, "lng": 113.5602 }, "routeIds": ["B12"] },
+  { "id": "BUS-04", "code": "D104", "name": "Tech Park", "coordinate": { "lat": 22.1571, "lng": 113.5665 }, "routeIds": ["B12"] },
+  { "id": "BUS-05", "code": "D201", "name": "Garden Library", "coordinate": { "lat": 22.1478, "lng": 113.5594 }, "routeIds": ["B27"] },
+  { "id": "BUS-06", "code": "D202", "name": "East Market", "coordinate": { "lat": 22.1452, "lng": 113.5638 }, "routeIds": ["B27"] },
+  { "id": "BUS-07", "code": "D203", "name": "River Walk", "coordinate": { "lat": 22.1481, "lng": 113.5681 }, "routeIds": ["B27"] },
+  { "id": "BUS-08", "code": "D204", "name": "Community Stadium", "coordinate": { "lat": 22.1516, "lng": 113.5653 }, "routeIds": ["B27"] },
+  { "id": "BUS-09", "code": "D301", "name": "Harbor East", "coordinate": { "lat": 22.1496, "lng": 113.5521 }, "routeIds": [] },
+  { "id": "BUS-10", "code": "D302", "name": "Old Quay", "coordinate": { "lat": 22.1562, "lng": 113.5588 }, "routeIds": [] },
+  { "id": "BUS-11", "code": "D303", "name": "South Gate", "coordinate": { "lat": 22.1445, "lng": 113.5557 }, "routeIds": [] },
+  { "id": "BUS-12", "code": "D304", "name": "Arts Center", "coordinate": { "lat": 22.1519, "lng": 113.5628 }, "routeIds": [] }
+]

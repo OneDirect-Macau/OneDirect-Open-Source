@@ -1,0 +1,17 @@
+{
+  "name": "@onedirect/demo-hub",
+  "version": "0.1.0",
+  "license": "Apache-2.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host localhost",
+    "build": "node -e \"require('node:fs').rmSync('dist',{recursive:true,force:true})\" && tsc -p tsconfig.json && vite build"
+  },
+  "dependencies": {
+    "@onedirect/bus-eta-engine": "0.1.0",
+    "@onedirect/data-fetcher-provider-layer": "0.1.0",
+    "@onedirect/smart-transit-search-keyboard": "0.1.0",
+    "@onedirect/transit-navigation": "0.1.0"
+  }
+}

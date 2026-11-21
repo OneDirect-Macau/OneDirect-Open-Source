@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="360" viewBox="0 0 1400 360" role="img" aria-label="Provider layer flow">
+  <defs>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#2578B8"/>
+    </marker>
+  </defs>
+  <rect width="1400" height="360" rx="24" fill="#FFFFFF" stroke="#CADDE9"/>
+  <text x="52" y="70" font-family="Segoe UI, PingFang TC, sans-serif" font-size="16" font-weight="800" fill="#2578B8">PROVIDER PIPELINE</text>
+  <g font-family="Segoe UI, PingFang TC, sans-serif" font-size="18" font-weight="700" fill="#17231F">
+    <rect x="52" y="120" width="246" height="130" rx="16" fill="#EDF5FA"/>
+    <text x="74" y="162">Host or Mock</text>
+    <text x="74" y="194" font-size="14" font-weight="500" fill="#506A78">raw provider source</text>
+    <rect x="392" y="120" width="246" height="130" rx="16" fill="#EDF5FA"/>
+    <text x="414" y="162">Fallback</text>
+    <text x="414" y="194" font-size="14" font-weight="500" fill="#506A78">primary → backup</text>
+    <rect x="732" y="120" width="246" height="130" rx="16" fill="#EDF5FA"/>
+    <text x="754" y="162">TTL Cache</text>
+    <text x="754" y="194" font-size="14" font-weight="500" fill="#506A78">defensive copies</text>
+    <rect x="1072" y="120" width="276" height="130" rx="16" fill="#2578B8"/>
+    <text x="1094" y="162" fill="#FFFFFF">Core Consumers</text>
+    <text x="1094" y="194" font-size="14" font-weight="500" fill="#D8EAF5">01 · 03 · 04</text>
+  </g>
+  <path d="M298 185 L392 185" stroke="#2578B8" stroke-width="4" marker-end="url(#a)"/>
+  <path d="M638 185 L732 185" stroke="#2578B8" stroke-width="4" marker-end="url(#a)"/>
+  <path d="M978 185 L1072 185" stroke="#2578B8" stroke-width="4" marker-end="url(#a)"/>
+</svg>

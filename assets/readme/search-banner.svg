@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="400" viewBox="0 0 1600 400" role="img" aria-label="Smart Transit Search Keyboard banner">
+  <rect width="1600" height="400" rx="26" fill="#FFF9E8"/>
+  <g transform="translate(1010 64)" font-family="Segoe UI, PingFang TC, sans-serif">
+    <rect width="500" height="66" rx="14" fill="#FFFFFF" stroke="#E4D6A8"/>
+    <text x="24" y="41" font-size="22" font-weight="750" fill="#17231F">B1</text>
+    <rect y="82" width="500" height="66" rx="12" fill="#FFFFFF" stroke="#E4D6A8"/>
+    <circle cx="30" cy="115" r="16" fill="#D39A28"/>
+    <text x="30" y="121" text-anchor="middle" font-size="14" font-weight="800" fill="#FFFFFF">B</text>
+    <text x="60" y="121" font-size="19" font-weight="750" fill="#17231F">B12 · Demo Harbor North</text>
+    <rect y="164" width="500" height="66" rx="12" fill="#FFFFFF" stroke="#E4D6A8"/>
+    <circle cx="30" cy="197" r="16" fill="#D39A28"/>
+    <text x="30" y="203" text-anchor="middle" font-size="14" font-weight="800" fill="#FFFFFF">B</text>
+    <text x="60" y="203" font-size="19" font-weight="750" fill="#17231F">B27 · Garden District</text>
+    <g transform="translate(0 252)">
+      <rect width="48" height="48" rx="9" fill="#EAF0EC"/>
+      <rect x="56" width="48" height="48" rx="9" fill="#FFFFFF" stroke="#D39A28"/>
+      <rect x="112" width="48" height="48" rx="9" fill="#EAF0EC"/>
+      <rect x="168" width="48" height="48" rx="9" fill="#EAF0EC"/>
+      <rect x="224" width="48" height="48" rx="9" fill="#EAF0EC"/>
+      <text x="24" y="31" text-anchor="middle" font-size="17" font-weight="800" fill="#68736E">1</text>
+      <text x="80" y="31" text-anchor="middle" font-size="17" font-weight="800" fill="#9D6A00">2</text>
+      <text x="136" y="31" text-anchor="middle" font-size="17" font-weight="800" fill="#9AA6A1">3</text>
+      <text x="192" y="31" text-anchor="middle" font-size="17" font-weight="800" fill="#9AA6A1">4</text>
+      <text x="248" y="31" text-anchor="middle" font-size="17" font-weight="800" fill="#9AA6A1">5</text>
+    </g>
+  </g>
+  <g font-family="Segoe UI, PingFang TC, sans-serif">
+    <rect x="54" y="46" width="88" height="42" rx="21" fill="#D39A28"/>
+    <text x="98" y="73" text-anchor="middle" font-size="17" font-weight="800" fill="#FFFFFF">03</text>
+    <text x="58" y="166" font-size="62" font-weight="850" letter-spacing="-2" fill="#17231F">SMART SEARCH</text>
+    <text x="60" y="208" font-size="23" fill="#766A41">Route and stop matching with dynamic keyboard state.</text>
+    <text x="60" y="268" font-size="17" font-weight="750" fill="#9D6A00">NFKC normalization</text>
+    <text x="60" y="300" font-size="17" font-weight="750" fill="#9D6A00">Prefix ranking</text>
+    <text x="60" y="332" font-size="17" font-weight="750" fill="#9D6A00">Completion suggestions</text>
+  </g>
+</svg>

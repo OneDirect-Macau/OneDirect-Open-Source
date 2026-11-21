@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="400" viewBox="0 0 1600 400" role="img" aria-label="Geofencing engine banner">
+  <rect width="1600" height="400" rx="26" fill="#F0F8F4"/>
+  <g transform="translate(1110 200)" fill="none" stroke="#7BB79B">
+    <circle r="62" stroke-width="2" stroke-dasharray="8 8"/>
+    <circle r="120" stroke-width="2" stroke-dasharray="10 12"/>
+    <circle r="180" stroke-width="2" stroke-dasharray="12 14"/>
+    <circle r="10" fill="#2E8B57" stroke="none"/>
+  </g>
+  <g fill="#2E8B57">
+    <circle cx="1210" cy="148" r="12"/>
+    <circle cx="1320" cy="256" r="12"/>
+    <circle cx="1030" cy="274" r="12"/>
+  </g>
+  <g font-family="Segoe UI, PingFang TC, sans-serif">
+    <rect x="54" y="46" width="180" height="42" rx="21" fill="#2E8B57"/>
+    <text x="144" y="73" text-anchor="middle" font-size="16" font-weight="800" fill="#FFFFFF">AUXILIARY</text>
+    <text x="58" y="166" font-size="66" font-weight="850" letter-spacing="-2" fill="#17231F">GEOFENCING</text>
+    <text x="60" y="208" font-size="23" fill="#526A60">Haversine distance, radius filtering and nearest stops.</text>
+    <text x="60" y="268" font-size="17" font-weight="750" fill="#2E8B57">WGS84 validation</text>
+    <text x="60" y="300" font-size="17" font-weight="750" fill="#2E8B57">Deterministic ranking</text>
+    <text x="60" y="332" font-size="17" font-weight="750" fill="#2E8B57">No network access</text>
+  </g>
+</svg>

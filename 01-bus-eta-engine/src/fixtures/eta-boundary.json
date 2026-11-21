@@ -1,0 +1,15 @@
+{
+  "routeId": "B12",
+  "stopId": "BUS-01",
+  "direction": 0,
+  "generatedAt": "2026-11-21T08:00:00.000Z",
+  "isRealtime": true,
+  "source": "mock-fixture",
+  "arrivals": [
+    { "minutes": 7 },
+    { "minutes": 0 },
+    { "minutes": -2 },
+    { "minutes": 7 },
+    { "minutes": 14 }
+  ]
+}

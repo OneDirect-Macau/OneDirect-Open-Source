@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="520" viewBox="0 0 1600 520" role="img" aria-label="OneDirect core modules banner">
+  <defs>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M 32 0 L 0 0 0 32" fill="none" stroke="#EEF3F1" stroke-opacity="0.06" stroke-width="1"/>
+    </pattern>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="160%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#071015" flood-opacity="0.28"/>
+    </filter>
+  </defs>
+  <rect width="1600" height="520" rx="28" fill="#101B22"/>
+  <rect width="1600" height="520" rx="28" fill="url(#grid)"/>
+  <path d="M65 420 C260 336 390 438 585 352 C775 268 922 360 1125 252 C1270 176 1400 194 1540 126" fill="none" stroke="#2E8B57" stroke-width="8" stroke-linecap="round"/>
+  <g fill="#F7F4EC">
+    <circle cx="65" cy="420" r="12"/>
+    <circle cx="585" cy="352" r="12"/>
+    <circle cx="1125" cy="252" r="12"/>
+  </g>
+  <g transform="translate(65 54)">
+    <rect width="54" height="54" rx="12" fill="#E4572E"/>
+    <text x="27" y="35" text-anchor="middle" font-family="Segoe UI, PingFang TC, Microsoft JhengHei, sans-serif" font-size="18" font-weight="800" fill="#FFFFFF">OD</text>
+    <text x="72" y="36" font-family="Segoe UI, PingFang TC, Microsoft JhengHei, sans-serif" font-size="22" font-weight="700" letter-spacing="2" fill="#F7F4EC">ONEDIRECT OPEN SOURCE</text>
+  </g>
+  <text x="65" y="226" font-family="Segoe UI, PingFang TC, Microsoft JhengHei, sans-serif" font-size="92" font-weight="850" letter-spacing="-3" fill="#FFFFFF">FOUR CORE</text>
+  <text x="65" y="306" font-family="Segoe UI, PingFang TC, Microsoft JhengHei, sans-serif" font-size="92" font-weight="850" letter-spacing="-3" fill="#FFFFFF">TRANSIT ENGINES</text>
+  <text x="68" y="358" font-family="Segoe UI, PingFang TC, Microsoft JhengHei, sans-serif" font-size="23" font-weight="500" fill="#B9C9C3">TypeScript modules. Provider-first architecture. Fictional data by default.</text>
+  <g font-family="Segoe UI, PingFang TC, Microsoft JhengHei, sans-serif">
+    <rect x="68" y="396" width="150" height="42" rx="21" fill="#1D313B" stroke="#36504F"/>
+    <text x="143" y="423" text-anchor="middle" font-size="16" font-weight="700" fill="#DDE9E4">TypeScript</text>
+    <rect x="230" y="396" width="178" height="42" rx="21" fill="#1D313B" stroke="#36504F"/>
+    <text x="319" y="423" text-anchor="middle" font-size="16" font-weight="700" fill="#DDE9E4">Mock Data</text>
+    <rect x="420" y="396" width="170" height="42" rx="21" fill="#1D313B" stroke="#36504F"/>
+    <text x="505" y="423" text-anchor="middle" font-size="16" font-weight="700" fill="#DDE9E4">Sanitized</text>
+  </g>
+  <g transform="translate(895 64)" filter="url(#shadow)">
+    <rect width="640" height="390" rx="22" fill="#16262E" stroke="#2D4650"/>
+    <text x="28" y="44" font-family="Segoe UI, PingFang TC, Microsoft JhengHei, sans-serif" font-size="15" font-weight="800" letter-spacing="2" fill="#8FA59D">CORE MODULES</text>
+    <g transform="translate(28 72)">
+      <rect width="286" height="130" rx="16" fill="#21353D"/>
+      <rect x="18" y="18" width="48" height="48" rx="12" fill="#E4572E"/>
+      <text x="42" y="49" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="800" fill="#FFFFFF">01</text>
+      <text x="82" y="42" font-family="Segoe UI, PingFang TC, sans-serif" font-size="22" font-weight="750" fill="#FFFFFF">Bus ETA</text>
+      <text x="82" y="70" font-family="Segoe UI, PingFang TC, sans-serif" font-size="14" fill="#B9C9C3">Arrival estimation</text>
+      <text x="82" y="92" font-family="Segoe UI, PingFang TC, sans-serif" font-size="14" fill="#B9C9C3">state and matching</text>
+    </g>
+    <g transform="translate(328 72)">
+      <rect width="284" height="130" rx="16" fill="#21353D"/>
+      <rect x="18" y="18" width="48" height="48" rx="12" fill="#2578B8"/>
+      <text x="42" y="49" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="800" fill="#FFFFFF">02</text>
+      <text x="82" y="42" font-family="Segoe UI, PingFang TC, sans-serif" font-size="22" font-weight="750" fill="#FFFFFF">Provider</text>
+      <text x="82" y="70" font-family="Segoe UI, PingFang TC, sans-serif" font-size="14" fill="#B9C9C3">Contracts, cache</text>
+      <text x="82" y="92" font-family="Segoe UI, PingFang TC, sans-serif" font-size="14" fill="#B9C9C3">retry and fallback</text>
+    </g>
+    <g transform="translate(28 218)">
+      <rect width="286" height="140" rx="16" fill="#21353D"/>
+      <rect x="18" y="18" width="48" height="48" rx="12" fill="#D39A28"/>
+      <text x="42" y="49" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="800" fill="#FFFFFF">03</text>
+      <text x="82" y="42" font-family="Segoe UI, PingFang TC, sans-serif" font-size="22" font-weight="750" fill="#FFFFFF">Smart Search</text>
+      <text x="82" y="70" font-family="Segoe UI, PingFang TC, sans-serif" font-size="14" fill="#B9C9C3">Route and stop ranking</text>
+      <text x="82" y="92" font-family="Segoe UI, PingFang TC, sans-serif" font-size="14" fill="#B9C9C3">dynamic keypad state</text>
+    </g>
+    <g transform="translate(328 218)">
+      <rect width="284" height="140" rx="16" fill="#21353D"/>
+      <rect x="18" y="18" width="48" height="48" rx="12" fill="#2E8B57"/>
+      <text x="42" y="49" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="16" font-weight="800" fill="#FFFFFF">04</text>
+      <text x="82" y="42" font-family="Segoe UI, PingFang TC, sans-serif" font-size="22" font-weight="750" fill="#FFFFFF">Navigation</text>
+      <text x="82" y="70" font-family="Segoe UI, PingFang TC, sans-serif" font-size="14" fill="#B9C9C3">Direct and transfer</text>
+      <text x="82" y="92" font-family="Segoe UI, PingFang TC, sans-serif" font-size="14" fill="#B9C9C3">journey planning</text>
+    </g>
+  </g>
+</svg>

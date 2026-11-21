@@ -1,0 +1,33 @@
+{
+  "name": "onedirect-opensource",
+  "version": "0.1.0",
+  "license": "Apache-2.0",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "02-data-fetcher-provider-layer",
+    "01-bus-eta-engine",
+    "03-smart-transit-search-keyboard",
+    "04-transit-navigation",
+    "other-modules/geofencing-engine",
+    "other-modules/map-viewport-ui",
+    "other-modules/demo-hub"
+  ],
+  "scripts": {
+    "build": "node scripts/verify.mjs --build-only",
+    "test": "node scripts/verify.mjs --test-only",
+    "sanitize": "node scripts/sanitize-check.mjs",
+    "predev": "node scripts/verify.mjs --build-only",
+    "dev": "npm run dev -w @onedirect/demo-hub",
+    "verify": "node scripts/verify.mjs"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.0",
+    "@types/react": "^18.3.28",
+    "@types/react-dom": "^18.3.7",
+    "@vitejs/plugin-react": "^6.2.1",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.5"
+  }
+}
