@@ -21,6 +21,7 @@
 | Document | Description |
 | --- | --- |
 | [Architecture](./architecture/ARCHITECTURE.md) | System context、資料流及 module composition |
+| [Operating Flow](./architecture/OPERATING_FLOW.md) | 四段動畫、request lifecycle、engine responsibilities 及估算參數 |
 | [Module Boundaries](./architecture/MODULE_BOUNDARIES.md) | 核心依賴方向、ownership 與 extension rules |
 
 ### Reference

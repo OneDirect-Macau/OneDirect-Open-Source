@@ -153,6 +153,134 @@ function setupNavigation() {
   });
 }
 
+function setupSystemFlow() {
+  const stage = document.querySelector<HTMLElement>("#flow-stage");
+  const toggle = document.querySelector<HTMLButtonElement>("#flow-toggle");
+  const previous = document.querySelector<HTMLButtonElement>("#flow-prev");
+  const next = document.querySelector<HTMLButtonElement>("#flow-next");
+  const title = document.querySelector<HTMLElement>("#flow-title");
+  const detail = document.querySelector<HTMLElement>("#flow-detail");
+  const counter = document.querySelector<HTMLElement>("#flow-counter");
+  const progress = document.querySelector<HTMLElement>("#flow-progress");
+  const progressFill = document.querySelector<HTMLElement>("#flow-progress-fill");
+  if (
+    !stage ||
+    !toggle ||
+    !previous ||
+    !next ||
+    !title ||
+    !detail ||
+    !counter ||
+    !progress ||
+    !progressFill
+  ) {
+    return;
+  }
+
+  const steps = [
+    {
+      title: "The host sends one typed request",
+      detail:
+        "A UI, API, or CLI asks for routes, stops, and geometry without coupling itself to a data vendor.",
+      nodes: ["input"],
+      link: "request",
+    },
+    {
+      title: "02 applies the data boundary",
+      detail:
+        "The provider layer owns contracts, cache, retry, and fallback while the host controls the real data source.",
+      nodes: ["provider"],
+      link: "fanout",
+    },
+    {
+      title: "Three pure engines transform the data",
+      detail:
+        "ETA, search, and navigation stay independent. Each engine receives typed data and returns deterministic output.",
+      nodes: ["eta", "search", "navigation"],
+      link: "fanout",
+    },
+    {
+      title: "Typed results return to the host",
+      detail:
+        "The demo renders results without importing vendor-specific network or authentication logic.",
+      nodes: ["output"],
+      link: "output",
+    },
+  ] as const;
+
+  const reducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)",
+  ).matches;
+  let stepIndex = 0;
+  let playing = !reducedMotion;
+  let timer: number | null = null;
+
+  const stopTimer = () => {
+    if (timer !== null) window.clearInterval(timer);
+    timer = null;
+  };
+
+  const renderStep = () => {
+    const step = steps[stepIndex]!;
+    stage.dataset.step = String(stepIndex);
+    stage.dataset.playing = String(playing);
+    title.textContent = step.title;
+    detail.textContent = step.detail;
+    counter.textContent = `${String(stepIndex + 1).padStart(2, "0")} / ${String(steps.length).padStart(2, "0")}`;
+    toggle.textContent = playing ? "Pause" : "Play";
+    toggle.setAttribute("aria-pressed", String(playing));
+
+    stage.querySelectorAll<HTMLElement>("[data-flow-node]").forEach((node) => {
+      node.classList.toggle(
+        "is-active",
+        step.nodes.some((nodeId) => nodeId === node.dataset.flowNode),
+      );
+    });
+    stage.querySelectorAll<HTMLElement>("[data-flow-link]").forEach((link) => {
+      link.classList.toggle("is-active", link.dataset.flowLink === step.link);
+    });
+
+    const percentage = ((stepIndex + 1) / steps.length) * 100;
+    progressFill.style.width = `${percentage}%`;
+    progress.setAttribute("aria-valuenow", String(stepIndex + 1));
+  };
+
+  const startTimer = () => {
+    stopTimer();
+    if (!playing) return;
+    timer = window.setInterval(() => {
+      stepIndex = (stepIndex + 1) % steps.length;
+      renderStep();
+    }, 2_800);
+  };
+
+  const move = (direction: number) => {
+    stepIndex =
+      (stepIndex + direction + steps.length) % steps.length;
+    renderStep();
+    startTimer();
+  };
+
+  previous.addEventListener("click", () => move(-1));
+  next.addEventListener("click", () => move(1));
+  toggle.addEventListener("click", () => {
+    playing = !playing;
+    renderStep();
+    startTimer();
+  });
+
+  document.addEventListener("visibilitychange", () => {
+    if (document.visibilityState === "hidden") {
+      stopTimer();
+    } else {
+      startTimer();
+    }
+  });
+
+  renderStep();
+  startTimer();
+}
+
 async function setupProviderPanel() {
   const [routes, stops, geometries] = await Promise.all([
     provider.getRoutes(),
@@ -181,11 +309,93 @@ app.innerHTML = `
   </header>
 
   <nav class="tabs" aria-label="Demo sections">
+    <a href="#how-it-works">How it works</a>
     <a href="#provider">Provider</a>
     <a href="#eta">Bus ETA</a>
     <a href="#search">Search Keyboard</a>
     <a href="#navigation">Navigation</a>
   </nav>
+
+  <section id="how-it-works" class="panel flow-panel">
+    <div class="flow-heading">
+      <div>
+        <p class="eyebrow">System walkthrough</p>
+        <h2>How OneDirect works</h2>
+        <p class="flow-summary">One provider boundary feeds three independent transit engines.</p>
+      </div>
+      <div class="flow-controls" aria-label="Animation controls">
+        <button type="button" id="flow-prev">Previous</button>
+        <button type="button" id="flow-toggle" aria-pressed="true">Pause</button>
+        <button type="button" id="flow-next">Next</button>
+      </div>
+    </div>
+
+    <div id="flow-stage" class="flow-stage" data-step="0" data-playing="true">
+      <div class="flow-board">
+        <div class="flow-node flow-input" data-flow-node="input">
+          <span class="flow-node-kicker">Host</span>
+          <strong>UI / API / CLI</strong>
+          <span>One typed transit request</span>
+        </div>
+
+        <div class="flow-link" data-flow-link="request" aria-hidden="true">
+          <span class="flow-packet"></span>
+          <span class="flow-link-label">request</span>
+        </div>
+
+        <div class="flow-node flow-provider" data-flow-node="provider">
+          <span class="flow-node-kicker">02</span>
+          <strong>Data Provider</strong>
+          <span>contracts · cache · retry · fallback</span>
+        </div>
+
+        <div class="flow-link" data-flow-link="fanout" aria-hidden="true">
+          <span class="flow-packet"></span>
+          <span class="flow-link-label">normalized</span>
+        </div>
+
+        <div class="flow-engine-stack">
+          <div class="flow-node flow-engine" data-flow-node="eta">
+            <span class="flow-node-kicker">01</span>
+            <strong>Bus ETA</strong>
+            <span>direction match + arrival estimate</span>
+          </div>
+          <div class="flow-node flow-engine" data-flow-node="search">
+            <span class="flow-node-kicker">03</span>
+            <strong>Smart Search</strong>
+            <span>ranking + keyboard state</span>
+          </div>
+          <div class="flow-node flow-engine" data-flow-node="navigation">
+            <span class="flow-node-kicker">04</span>
+            <strong>Navigation</strong>
+            <span>direct + one-transfer journeys</span>
+          </div>
+        </div>
+
+        <div class="flow-link" data-flow-link="output" aria-hidden="true">
+          <span class="flow-packet"></span>
+          <span class="flow-link-label">typed</span>
+        </div>
+
+        <div class="flow-node flow-output" data-flow-node="output">
+          <span class="flow-node-kicker">Output</span>
+          <strong>Typed results</strong>
+          <span>ETA · suggestions · journey legs</span>
+        </div>
+      </div>
+
+      <div class="flow-caption" aria-live="polite">
+        <span id="flow-counter" class="flow-counter">01 / 04</span>
+        <div>
+          <strong id="flow-title">The host sends one typed request</strong>
+          <p id="flow-detail">A UI, API, or CLI asks for routes, stops, and geometry without coupling itself to a data vendor.</p>
+        </div>
+      </div>
+      <div id="flow-progress" class="flow-progress" role="progressbar" aria-label="Walkthrough progress" aria-valuemin="1" aria-valuemax="4" aria-valuenow="1">
+        <span id="flow-progress-fill"></span>
+      </div>
+    </div>
+  </section>
 
   <section id="provider" class="panel">
     <div class="panel-heading">
@@ -227,6 +437,7 @@ document.querySelector("#run-eta")?.addEventListener("click", formatEtaResult);
 document.querySelector("#refresh-provider")?.addEventListener("click", () => {
   void provider.reload().then(setupProviderPanel);
 });
+setupSystemFlow();
 void setupProviderPanel();
 setupSearch();
 setupNavigation();

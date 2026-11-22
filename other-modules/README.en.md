@@ -55,7 +55,7 @@ The four cores live under `01-bus-eta-engine`, `02-data-fetcher-provider-layer`,
 
 ## 🎬 Demo Hub
 
-The demo verifies provider metadata, ETA output, search suggestions, dynamic keyboard state, and journey legs.
+The demo starts with a four-stage provider-first animation, then verifies provider metadata, ETA output, search suggestions, dynamic keyboard state, and journey legs.
 
 ```powershell
 npm run dev

@@ -103,10 +103,15 @@ Transit applications often mix ETA logic, search behavior, navigation, and data 
 
 The demo hub intentionally keeps the UI minimal:
 
-1. Provider, cache, route, stop, and geometry counts.
-2. Downstream ETA from a live snapshot.
-3. Route and stop search with dynamic keyboard availability.
-4. Journey legs from Harbor North to Tech Park.
+1. An animated walkthrough from host request through typed output.
+2. Provider, cache, route, stop, and geometry counts.
+3. Downstream ETA from a live snapshot.
+4. Route and stop search with dynamic keyboard availability.
+5. Journey legs from Harbor North to Tech Park.
+
+<p align="center">
+  <img src="./assets/readme/system-flow-preview.png" alt="OneDirect animated provider-first system walkthrough" width="100%" />
+</p>
 
 <table>
   <tr>
@@ -151,6 +156,8 @@ flowchart LR
     E --> F
     F --> G["demo-hub"]
 ```
+
+The four-stage animation lives in the [Demo Hub](./other-modules/demo-hub/#how-it-works). See [Operating Flow](./docs/architecture/OPERATING_FLOW.md) for the full request lifecycle and estimate parameters.
 
 | Boundary | Rule |
 | --- | --- |
@@ -336,6 +343,7 @@ Full index: [docs/README.md](./docs/README.md)
 | Document | Description |
 | --- | --- |
 | [Architecture](./docs/architecture/ARCHITECTURE.md) | System context and data flow |
+| [Operating Flow](./docs/architecture/OPERATING_FLOW.md) | Animated walkthrough, engine responsibilities, and deterministic estimates |
 | [Module Boundaries](./docs/architecture/MODULE_BOUNDARIES.md) | Ownership and dependencies |
 | [API Reference](./docs/reference/API_REFERENCE.md) | Public APIs |
 | [Environment](./docs/reference/ENVIRONMENT.md) | Environment variables |

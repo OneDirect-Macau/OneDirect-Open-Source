@@ -103,10 +103,15 @@
 
 Demo 不追求 production UI，只用最少介面證明四個 core 可以一起運作：
 
-1. 顯示 Provider、cache、route、stop 與 geometry 數量。
-2. 由 live snapshot 計算下游 ETA。
-3. 即時搜尋路線／站點並更新 virtual keyboard。
-4. 計算 Harbor North 到 Tech Park 的 journey legs。
+1. 以四段動畫展示 Host request、Provider boundary、三個 engines 及 typed output。
+2. 顯示 Provider、cache、route、stop 與 geometry 數量。
+3. 由 live snapshot 計算下游 ETA。
+4. 即時搜尋路線／站點並更新 virtual keyboard。
+5. 計算 Harbor North 到 Tech Park 的 journey legs。
+
+<p align="center">
+  <img src="./assets/readme/system-flow-preview.png" alt="OneDirect animated provider-first system walkthrough" width="100%" />
+</p>
 
 <table>
   <tr>
@@ -165,6 +170,8 @@ flowchart LR
     E --> F
     F --> G["demo-hub"]
 ```
+
+互動式四段動畫位於 [Demo Hub](./other-modules/demo-hub/#how-it-works)；完整 request lifecycle、ETA 及 navigation 參數見 [Operating Flow](./docs/architecture/OPERATING_FLOW.md)。
 
 | Boundary | Rule |
 | --- | --- |
@@ -365,6 +372,7 @@ OneDirect-OpenSource/
 | Document | Description |
 | --- | --- |
 | [Architecture](./docs/architecture/ARCHITECTURE.md) | 系統、資料流及 component interaction |
+| [Operating Flow](./docs/architecture/OPERATING_FLOW.md) | Animated walkthrough、engine responsibilities 及 deterministic estimates |
 | [Module Boundaries](./docs/architecture/MODULE_BOUNDARIES.md) | Ownership 與 dependency rules |
 | [API Reference](./docs/reference/API_REFERENCE.md) | Public package APIs |
 | [Environment](./docs/reference/ENVIRONMENT.md) | Environment variables |
