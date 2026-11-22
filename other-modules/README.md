@@ -63,10 +63,11 @@
 
 `demo-hub` 顯示：
 
-1. Provider counts 及 TTL cache。
-2. Downstream ETA。
-3. Search suggestions 及 dynamic keypad。
-4. Journey legs。
+1. 四段 provider-first system animation。
+2. Provider counts 及 TTL cache。
+3. Downstream ETA。
+4. Search suggestions 及 dynamic keypad。
+5. Journey legs。
 
 ```powershell
 npm run dev
