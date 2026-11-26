@@ -79,17 +79,22 @@ Direction 或 station sequence 對不上時，不會假裝成功；關聯 ETA �
 
 | 參數 | Default |
 | --- | ---: |
-| Walk speed | `78 m/min` |
-| Bus estimate | `310 m/min` |
-| LRT estimate | `520 m/min` |
-| Bus wait | `4 min` |
-| LRT wait | `3 min` |
+| Walk speed | `1.25 m/s` |
+| Urban detour | `1.28` |
+| Walking slope factor | `1.08` |
+| Bus free-flow speed | `18.6 km/h` |
+| BPR alpha／beta | `0.15／4` |
+| LRT cruise speed | `35 km/h` |
+| LRT dwell | `20 s／stop` |
+| Bus wait | Live ETA or headway／2 |
+| LRT wait | Schedule-profile headway／2 |
+| Transfer safety buffer | `2 min` |
 | Origin access | `1,400 m` |
 | Destination access | `1,600 m` |
-| Transfer walk | `500 m` |
+| Transfer walk | `350 m` |
 | Result limit | `8` |
 
-Travel time 是 deterministic estimate。只有 selected journey 才 prepare walking geometry。
+Travel time 使用 Haversine、澳門 urban detour、BPR congestion、signal／turn delay、walking slope、LRT dwell 及 missed-transfer protection。Ranking 使用 total time、walking time、transfer count 與 ETA variance 的 multi-objective score。只有 selected journey 才 prepare walking geometry。
 
 ### Cache and failure boundaries
 

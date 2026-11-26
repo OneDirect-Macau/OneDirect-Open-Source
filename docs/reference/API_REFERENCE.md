@@ -50,13 +50,21 @@ import {
 
 ```ts
 import {
+  bprSpeedKmh,
   calculateJourneyOptions,
+  congestionRatio,
+  feasibleTransferWaitMinutes,
   findBestJourney,
+  haversineMeters,
+  lrtRideMinutes,
   prepareJourneyGeometry,
+  routeScore,
+  segmentTravelSeconds,
+  walkingMinutes,
 } from "@onedirect/transit-navigation";
 ```
 
-主要 output：`TransitService`、`JourneyOption`、`JourneyLeg`。
+主要 output：`TransitService`、`JourneyOption`、`JourneyLeg`。純數學公式獨立 export，方便 backend、benchmark 及單元測試重用。
 
 ### Auxiliary Modules
 
@@ -67,4 +75,4 @@ import {
 
 This page summarizes the public entry points for the four core packages. Detailed behavior, edge cases, and provider integration examples live in each package’s bilingual README.
 
-The ETA engine exports parsing, state, direction matching, and arrival estimation. The provider layer exports the contract, mock data, wrappers, cache, and retry. Search exports index creation, ranking, controller state, and key availability. Navigation exports network construction, journey planning, ranking, and geometry preparation.
+The ETA engine exports parsing, state, direction matching, and arrival estimation. The provider layer exports the contract, mock data, wrappers, cache, and retry. Search exports index creation, ranking, controller state, and key availability. Navigation exports network construction, journey planning, Haversine/BPR/EWMA/LRT math, missed-transfer protection, multi-objective ranking, and geometry preparation.

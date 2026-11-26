@@ -30,8 +30,8 @@
 | Language | TypeScript strict mode |
 | Default data source | Offline fictional fixtures |
 | Workspaces | 7 |
-| Unit tests | 40 passing |
-| Security scan | 120 product files passing |
+| Unit tests | 55 passing |
+| Security scan | 152 files passing |
 | Last verified | 2026-11-21 |
 
 ## 🧭 Contents
@@ -226,6 +226,18 @@ const journeys = await calculateJourneyOptions(
 );
 ```
 
+### Mathematical navigation model
+
+The navigation package now exposes independently testable Haversine, Macau urban detour, BPR congestion, EWMA smoothing, walking, LRT, transfer protection, and multi-objective ranking:
+
+$$d_{\mathrm{hav}} = 2R\arcsin\!\left(\sqrt{\sin^2\!\left(\frac{\Delta\phi}{2}\right)+\cos\phi_1\cos\phi_2\sin^2\!\left(\frac{\Delta\lambda}{2}\right)}\right)$$
+
+$$T_{\mathrm{segment}} = \frac{L}{v_0 / \left[1+\alpha(q/C)^\beta\right]} + N_{\mathrm{signal}}\bar{w}_{\mathrm{signal}} + P_{\mathrm{turn}}$$
+
+$$J_{\mathrm{route}} = w_1T_{\mathrm{total}} + w_2T_{\mathrm{walk}} + w_3N_{\mathrm{transfers}} + w_4\sigma_{\mathrm{ETA}}$$
+
+See the [Transit Navigation README](./04-transit-navigation/README.en.md#-mathematical-model) for every parameter, time breakdown, and the Macau peak-hour profile.
+
 ### Provider Wrappers
 
 ```ts
@@ -268,6 +280,7 @@ All defaults work without external services. Secret values must remain outside t
 | Provider cache and retry | Complete |
 | Search and dynamic keyboard | Complete |
 | Direct and one-transfer navigation | Complete |
+| Traffic-aware ETA and multi-objective navigation ranking | Complete |
 | Optional map viewport | Complete |
 | Bilingual module documentation | Complete |
 | Standalone package CI | Planned |
@@ -303,14 +316,14 @@ See [SECURITY.md](./SECURITY.md).
 | `npm run sanitize` | Scan for sensitive data |
 | `npm run verify` | Sanitize, build, and test |
 
-Current baseline: 7 workspaces, 6 test packages, 40 unit tests, zero warnings, and zero known dependency vulnerabilities.
+Current baseline: 7 workspaces, 6 test packages, 55 unit tests, zero warnings, and zero known dependency vulnerabilities.
 
 <a id="structure"></a>
 
 ## 🏗️ Project Layout
 
 ```text
-OneDirect-OpenSource/
+open-source/
 ├── 01-bus-eta-engine/
 ├── 02-data-fetcher-provider-layer/
 ├── 03-smart-transit-search-keyboard/
@@ -430,7 +443,7 @@ Host applications can add database-backed providers, paginated search indexes, o
 | Provider | Defensive copies, TTL, retry, fallback, reload |
 | ETA | Parsing, state, vehicle movement, direction |
 | Search | Normalization, ranking, completion, key state |
-| Navigation | Direct, transfer, unreachable, geometry |
+| Navigation | Direct, transfer, Haversine/BPR/EWMA, LRT headway, transfer protection, ranking, unreachable, geometry |
 | Geofencing | Distance, validation, radius, nearest route |
 | Map UI | Projection, clustering threshold, theme tokens |
 | Repository | Sanitization, TypeScript, Vite builds |

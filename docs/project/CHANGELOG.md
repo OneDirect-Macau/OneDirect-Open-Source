@@ -4,6 +4,16 @@
   <a href="../README.md">Docs Index</a>
 </p>
 
+## Unreleased
+
+### Added
+
+- Haversine-based Macau urban distance and walking-time model.
+- BPR congestion, signal delay, turn penalty, and EWMA speed smoothing.
+- Live bus wait fallback, scheduled LRT headway, and missed-transfer protection.
+- Explainable walk／wait／ride／transfer-buffer metrics and multi-objective ranking.
+- Full mathematical model documentation in Chinese and English.
+
 ## 0.1.0 — 2026-11-21
 
 ### Added

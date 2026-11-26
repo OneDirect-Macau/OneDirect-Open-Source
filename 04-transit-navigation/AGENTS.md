@@ -11,7 +11,8 @@
 
 - Preserve forward stop order for every service direction.
 - Reject journeys where alight index is not after boarding index.
-- Rank by total minutes, then fewer transfers, then stable ID.
+- Rank by the documented multi-objective score, then total minutes, fewer transfers, and stable ID.
+- Keep congestion, walking, wait, ride, transfer-buffer, variance, and score values auditable in the journey output.
 - Walking, waiting, and riding time must remain separately auditable.
 - Geometry preparation must degrade to straight lines or known stop coordinates.
 - Tests must cover direct, transfer, unreachable, and geometry cases.
