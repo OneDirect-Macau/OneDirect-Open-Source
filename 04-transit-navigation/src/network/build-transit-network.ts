@@ -2,6 +2,7 @@ import type {
   Coordinate,
   DataProvider,
   LrtLine,
+  LrtScheduleProfile,
   RouteGeometryMap,
   TransitRoute,
   TransitStop,
@@ -25,6 +26,8 @@ export type TransitService = {
   directionIndex: number;
   stops: NetworkStop[];
   geometry: Coordinate[];
+  headwayMinutes?: number;
+  scheduleProfile?: LrtScheduleProfile;
 };
 
 export type TransitNetwork = {
@@ -53,6 +56,7 @@ function busServices(
         label: `${route.label} · ${direction.name}`,
         color: route.color,
         directionIndex: direction.index,
+        headwayMinutes: 8,
         stops,
         geometry:
           geometries[route.id]?.[direction.index] ??
@@ -65,6 +69,7 @@ function busServices(
 function lrtServices(
   lines: LrtLine[],
   stations: TransitStop[],
+  scheduleProfiles: Record<string, LrtScheduleProfile>,
 ): TransitService[] {
   const stationById = new Map(stations.map((station) => [station.id, station]));
   return lines.flatMap((line) => {
@@ -88,6 +93,7 @@ function lrtServices(
       label: `${line.label} · ${directionIndex === 0 ? "Forward" : "Reverse"}`,
       color: line.color,
       directionIndex,
+      scheduleProfile: scheduleProfiles[line.id],
       stops: ordered.map((stop, order) => ({ ...stop, order })),
       geometry:
         directionIndex === 0
@@ -102,16 +108,18 @@ export function buildTransitNetwork({
   lrtLines,
   lrtStations,
   routeGeometries,
+  lrtScheduleProfiles = {},
 }: {
   routes: TransitRoute[];
   lrtLines: LrtLine[];
   lrtStations: TransitStop[];
   routeGeometries: RouteGeometryMap;
+  lrtScheduleProfiles?: Record<string, LrtScheduleProfile>;
 }): TransitNetwork {
   return {
     services: [
       ...busServices(routes, routeGeometries),
-      ...lrtServices(lrtLines, lrtStations),
+      ...lrtServices(lrtLines, lrtStations, lrtScheduleProfiles),
     ],
   };
 }
@@ -125,10 +133,21 @@ export async function loadTransitNetwork(
     provider.getLrtStations(),
     provider.getRouteGeometries(),
   ]);
+  const profiles = await Promise.all(
+    lrtLines.map(async (line) => [
+      line.id,
+      await provider.getLrtScheduleProfile(line.id),
+    ] as const),
+  );
+  const lrtScheduleProfiles: Record<string, LrtScheduleProfile> = {};
+  for (const [lineId, profile] of profiles) {
+    if (profile) lrtScheduleProfiles[lineId] = profile;
+  }
   return buildTransitNetwork({
     routes,
     lrtLines,
     lrtStations,
     routeGeometries,
+    lrtScheduleProfiles,
   });
 }

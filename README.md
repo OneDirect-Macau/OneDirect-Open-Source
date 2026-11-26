@@ -30,8 +30,8 @@
 | Language | TypeScript strict mode |
 | Default data source | Offline fictional fixtures |
 | Workspaces | 7 |
-| Unit tests | 40 passing |
-| Security scan | 120 product files passing |
+| Unit tests | 55 passing |
+| Security scan | 152 files passing |
 | Last verified | 2026-11-21 |
 
 ## 🧭 目錄
@@ -245,6 +245,18 @@ const journeys = await calculateJourneyOptions(
 );
 ```
 
+### 導航數學模型
+
+Navigation package 現已提供可獨立測試的 Haversine、澳門街道繞行、BPR 壅塞、EWMA 平滑、步行、LRT、轉乘保護及多目標 ranking：
+
+$$d_{\mathrm{hav}} = 2R\arcsin\!\left(\sqrt{\sin^2\!\left(\frac{\Delta\phi}{2}\right)+\cos\phi_1\cos\phi_2\sin^2\!\left(\frac{\Delta\lambda}{2}\right)}\right)$$
+
+$$T_{\mathrm{segment}} = \frac{L}{v_0 / \left[1+\alpha(q/C)^\beta\right]} + N_{\mathrm{signal}}\bar{w}_{\mathrm{signal}} + P_{\mathrm{turn}}$$
+
+$$J_{\mathrm{route}} = w_1T_{\mathrm{total}} + w_2T_{\mathrm{walk}} + w_3N_{\mathrm{transfers}} + w_4\sigma_{\mathrm{ETA}}$$
+
+完整參數、時間分解與 Macau peak-hour profile 見 [Transit Navigation README](./04-transit-navigation/README.md#-數學模型)。
+
 ### Provider Wrappers
 
 ```ts
@@ -287,6 +299,7 @@ import {
 | Provider cache and retry | Complete |
 | Search and dynamic keyboard | Complete |
 | Direct and one-transfer navigation | Complete |
+| Traffic-aware ETA and multi-objective navigation ranking | Complete |
 | Optional map viewport | Complete |
 | Bilingual module documentation | Complete |
 | Standalone package CI | Planned |
@@ -327,7 +340,7 @@ npm run sanitize
 目前 baseline：
 
 - 6 個 test packages。
-- 40 個 unit tests。
+- 55 個 unit tests。
 - 0 build warnings。
 - 0 known dependency vulnerabilities。
 
@@ -336,7 +349,7 @@ npm run sanitize
 ## 🏗️ 目錄結構
 
 ```text
-OneDirect-OpenSource/
+open-source/
 ├── 01-bus-eta-engine/
 ├── 02-data-fetcher-provider-layer/
 ├── 03-smart-transit-search-keyboard/
@@ -459,7 +472,7 @@ OneDirect-OpenSource/
 | Provider | Defensive copies、TTL、retry、fallback、reload |
 | ETA | Parsing、state、vehicle movement、direction |
 | Search | Normalization、ranking、completion、key state |
-| Navigation | Direct、transfer、unreachable、geometry |
+| Navigation | Direct、transfer、Haversine／BPR／EWMA、LRT headway、transfer protection、ranking、unreachable、geometry |
 | Geofencing | Distance、validation、radius、nearest route |
 | Map UI | Projection、clustering、theme tokens |
 | Repository | Sanitization、TypeScript、Vite builds |

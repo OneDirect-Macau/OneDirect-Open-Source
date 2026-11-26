@@ -17,12 +17,19 @@ describe("transit navigation", () => {
       provider,
       fixture.origin,
       fixture.destination,
-      { limit: fixture.limit },
+      {
+        limit: fixture.limit,
+        referenceTime: new Date("2026-11-25T04:00:00.000Z"),
+      },
     );
 
     assert.ok(journeys.length > 0);
     assert.equal(journeys[0]?.kind, "direct");
     assert.ok(journeys[0]?.badges.includes("B12"));
+    assert.ok((journeys[0]?.ridingMinutes ?? 0) > 0);
+    assert.ok((journeys[0]?.score ?? 0) > 0);
+    assert.ok((journeys[0]?.congestionRatio ?? 0) > 0);
+    assert.ok((journeys[0]?.etaVarianceMinutes ?? 0) > 0);
     const best = findBestJourney(journeys);
     assert.ok(best);
     const prepared = await prepareJourneyGeometry(provider, best);
@@ -67,6 +74,57 @@ describe("transit navigation", () => {
       { lat: 0, lng: 0.0205 },
     );
     assert.ok(journeys.some((journey) => journey.kind === "transfer"));
+    assert.ok(
+      journeys
+        .filter((journey) => journey.kind === "transfer")
+        .every((journey) => journey.transferBufferMinutes >= 0),
+    );
+  });
+
+  it("uses live wait data and exposes the timing breakdown", async () => {
+    const provider = new MockDataProvider();
+    const journeys = await calculateJourneyOptions(
+      provider,
+      fixture.origin,
+      fixture.destination,
+      {
+        referenceTime: new Date("2026-11-25T04:00:00.000Z"),
+        liveWaitMinutes: (serviceId, stopId) =>
+          serviceId.startsWith("bus:B12") && stopId === "BUS-01"
+            ? 2
+            : null,
+      },
+    );
+    const best = findBestJourney(journeys);
+    assert.ok(best);
+    const busLeg = best.legs.find((leg) => leg.type === "bus");
+    assert.equal(busLeg?.waitConfidence, "realtime");
+    assert.equal(busLeg?.waitMinutes, 2);
+    assert.equal(
+      best.walkMinutes + best.waitMinutes + best.ridingMinutes,
+      best.totalMinutes,
+    );
+  });
+
+  it("penalizes journeys under higher congestion", async () => {
+    const provider = new MockDataProvider();
+    const referenceTime = new Date("2026-11-25T04:00:00.000Z");
+    const freeFlow = await calculateJourneyOptions(
+      provider,
+      fixture.origin,
+      fixture.destination,
+      { congestionRatio: 0, referenceTime },
+    );
+    const congested = await calculateJourneyOptions(
+      provider,
+      fixture.origin,
+      fixture.destination,
+      { congestionRatio: 1.5, referenceTime },
+    );
+    assert.ok((congested[0]?.ridingMinutes ?? 0) >=
+      (freeFlow[0]?.ridingMinutes ?? 0));
+    assert.ok((congested[0]?.score ?? 0) >
+      (freeFlow[0]?.score ?? 0));
   });
 
   it("returns no options for unreachable coordinates", async () => {

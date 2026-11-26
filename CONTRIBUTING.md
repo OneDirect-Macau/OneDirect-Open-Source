@@ -10,7 +10,7 @@
 
 1. 閱讀根目錄 `README.md` 與 `AGENTS.md`。
 2. 確認改動屬於哪個 module。
-3. 不要修改 `OneDirect-main/` 或其他唯讀參考來源。
+3. 不要修改 `../PWA/` 或其他唯讀參考來源。
 4. 不要在 source、test、fixture 或 documentation 加入真實 endpoint、token、cookie 或 private data。
 
 ## 開發環境
@@ -105,7 +105,7 @@ Thank you for improving OneDirect. This repository values correctness, testabili
 
 1. Read `README.md` and `AGENTS.md`.
 2. Identify the owning module.
-3. Never modify `OneDirect-main/` or other read-only reference sources.
+3. Never modify `../PWA/` or other read-only reference sources.
 4. Never add real endpoints, credentials, cookies, or private data to source, tests, fixtures, or documentation.
 
 ## Development Setup

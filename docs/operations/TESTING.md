@@ -22,7 +22,7 @@
 | ETA | Duplicate arrivals、zero minute、stale、direction、stationary vehicle |
 | Provider | TTL、retry、fallback、defensive copy |
 | Search | Full-width input、ranking、disabled keys |
-| Navigation | Direct、transfer、unreachable、geometry |
+| Navigation | Direct、transfer、Haversine／BPR／EWMA、LRT headway、transfer protection、ranking、unreachable、geometry |
 | Geofencing | Distance、invalid coordinate、radius |
 | Map | Projection、clustering、theme |
 
